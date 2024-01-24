@@ -1,4 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 97vh;
+    width: 99vw;
+}
+
+.entryBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
+}
+
+.userInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
 .submit {
     height: 50px;
     width: 50px;
+}
+
+.libraryDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.addedBooks {
+    border: 1px solid black;
+    width: auto;
+    white-space: nowrap;
+    padding: 15px;
+    margin-right: 2%;
+    margin-bottom: 2%;
 }
