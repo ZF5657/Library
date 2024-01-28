@@ -1,4 +1,4 @@
-const submitBtn = document.querySelector('.submit');
+const submitBtn = document.querySelector('#submit');
 const titleInput = document.querySelector('#titleInput');
 const authorInput = document.querySelector('#authorInput');
 const pagesInput = document.querySelector('#pagesInput');
@@ -22,28 +22,36 @@ const addBookToLibrary = () => {
     myLibrary.push(newBook);
 
     //Loop to add new divs for each new book
-    myLibrary.forEach((book) => {
-        let bookDiv = document.createElement('div');
-        bookDiv.classList.add('addedBooks');
-        libraryDisplay.appendChild(bookDiv);
-        bookDiv.style = ('display: flex; flex-direction: column;');
-        let bookTitleDiv = document.createElement('div');
-        let bookAuthorDiv = document.createElement('div');
-        let bookPagesDiv = document.createElement('div');
-        bookTitleDiv.classList.add('addedBooksTitle');
-        bookAuthorDiv.classList.add('addedBooksTitle');
-        bookPagesDiv.classList.add('addedBooksTitle');
-        bookDiv.appendChild(bookTitleDiv);
-        bookDiv.appendChild(bookAuthorDiv);
-        bookDiv.appendChild(bookPagesDiv);
-        bookTitleDiv.textContent = 'Title: ' + book.title;
-        bookAuthorDiv.textContent = 'Author: ' + book.author;
-        bookPagesDiv.textContent = 'Pages: ' + book.pages;
+    myLibrary.forEach((book, index, library) => {
+        if(index === (library.length - 1)) {
+            let bookDiv = document.createElement('div');
+            bookDiv.classList.add('addedBooks');
+            libraryDisplay.appendChild(bookDiv);
+            let bookTitleDiv = document.createElement('div');
+            let bookAuthorDiv = document.createElement('div');
+            let bookPagesDiv = document.createElement('div');
+            bookTitleDiv.classList.add('addedBooksTitle');
+            bookAuthorDiv.classList.add('addedBooksTitle');
+            bookPagesDiv.classList.add('addedBooksTitle');
+            bookDiv.appendChild(bookTitleDiv);
+            bookDiv.appendChild(bookAuthorDiv);
+            bookDiv.appendChild(bookPagesDiv);
+            bookTitleDiv.textContent = 'Title: ' + book.title;
+            bookAuthorDiv.textContent = 'Author: ' + book.author;
+            bookPagesDiv.textContent = 'Pages: ' + book.pages;
+        }
     })
 }
 
-submitBtn.addEventListener('click', () => {
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault()
     addBookToLibrary();
     console.log(myLibrary);
+    titleInput.value = '';
+    titleInput.textContent = '';
+    authorInput.value = '';
+    authorInput.textContent = '';
+    pagesInput.value = '';
+    pagesInput.textContent = '';
 })
 

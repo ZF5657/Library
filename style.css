@@ -21,7 +21,19 @@
     margin-bottom: 5%;
 }
 
-.submit {
+#titleInput {
+    margin-bottom: 5%;
+}
+
+#authorInput {
+    margin-bottom: 5%;
+}
+
+#pagesInput {
+     margin-bottom: 5%;
+}
+
+#submit {
     height: 50px;
     width: 50px;
 }
@@ -31,6 +43,11 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.bookDiv {
+    display: flex;
+    flex-direction: column;
 }
 
 .addedBooks {
