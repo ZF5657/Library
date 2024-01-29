@@ -14,11 +14,26 @@
     margin-bottom: 3%;
 }
 
+.plus {
+    background-color: #cfcfcf;
+    border-radius: 100%;
+    transition: .3s ease-in-out;
+}
+.plus:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.plus:active {
+    transform: scale(1);
+    transition: .1s;
+}
+
 .userInput {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 5%;
+    visibility: hidden;
 }
 
 #titleInput {
@@ -30,12 +45,17 @@
 }
 
 #pagesInput {
-     margin-bottom: 5%;
+     margin-bottom: 10%;
 }
 
 #submit {
-    height: 50px;
-    width: 50px;
+    height: auto;
+    width: auto;
+    font-size: 1rem;
+}
+
+label {
+    font-size: 1.2rem;
 }
 
 .libraryDisplay {

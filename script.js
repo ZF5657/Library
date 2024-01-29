@@ -3,6 +3,7 @@ const titleInput = document.querySelector('#titleInput');
 const authorInput = document.querySelector('#authorInput');
 const pagesInput = document.querySelector('#pagesInput');
 const libraryDisplay = document.querySelector('.libraryDisplay');
+const plusBtn = document.querySelector('.plus');
 
 const myLibrary = [];
 
@@ -36,12 +37,19 @@ const addBookToLibrary = () => {
             bookDiv.appendChild(bookTitleDiv);
             bookDiv.appendChild(bookAuthorDiv);
             bookDiv.appendChild(bookPagesDiv);
+            const trash = document.createElement("img");
+            trash.src = "svg/trashcan.svg";
+            bookDiv.appendChild(trash);
             bookTitleDiv.textContent = 'Title: ' + book.title;
             bookAuthorDiv.textContent = 'Author: ' + book.author;
             bookPagesDiv.textContent = 'Pages: ' + book.pages;
         }
     })
 }
+
+plusBtn.addEventListener('click', () => {
+    document.querySelector('.userInput').style = ('visibility: visible;')
+})
 
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault()
