@@ -44,6 +44,16 @@ const addBookToLibrary = () => {
             bookTitleDiv.textContent = 'Title: ' + book.title;
             bookAuthorDiv.textContent = 'Author: ' + book.author;
             bookPagesDiv.textContent = 'Pages: ' + book.pages;
+            
+            //function to delete book from array and div
+            trash.addEventListener('click', () => {
+                const bookPos = myLibrary.indexOf(newBook);
+                if (bookPos > -1) {
+                    myLibrary.splice(bookPos, 1)
+                    bookDiv.style = ('display: none;');
+                    console.log(myLibrary);
+                }
+            })
         }
     })
 }

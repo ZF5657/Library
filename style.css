@@ -86,3 +86,6 @@ label {
     width: 1rem;
     margin-top: 5px;
 }
+.trash:hover {
+    cursor: pointer;
+}
