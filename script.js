@@ -39,6 +39,7 @@ const addBookToLibrary = () => {
             bookDiv.appendChild(bookPagesDiv);
             const trash = document.createElement("img");
             trash.src = "svg/trashcan.svg";
+            trash.classList.add('trash');
             bookDiv.appendChild(trash);
             bookTitleDiv.textContent = 'Title: ' + book.title;
             bookAuthorDiv.textContent = 'Author: ' + book.author;
