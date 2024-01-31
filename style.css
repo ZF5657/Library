@@ -29,11 +29,10 @@
 }
 
 .userInput {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     margin-bottom: 5%;
-    visibility: hidden;
 }
 
 #titleInput {
