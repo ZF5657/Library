@@ -53,19 +53,23 @@ const addBookToLibrary = () => {
             let toggleRead = '';
             if(readRadio.checked == true) {
                 readBtn.textContent = 'Read'
+                readBtn.style = ('background-color: #00eb00;')
                 toggleRead = true
             } else {
                 readBtn.textContent = 'Not Read'
+                readBtn.style = ('background-color: #ff0000;')
                 toggleRead = false
             };
             readBtn.addEventListener('click', () => {
                 if(toggleRead == true) {
                     readBtn.textContent = 'Not Read'
+                    readBtn.style = ('background-color: #ff0000;')
                     toggleRead = false
                     book.read = false
                     console.log(myLibrary)
                 } else {
                     readBtn.textContent = 'Read'
+                    readBtn.style = ('background-color: #00eb00;')
                     toggleRead = true
                     book.read = true
                     console.log(myLibrary)
@@ -95,7 +99,7 @@ plusBtn.addEventListener('click', () => {
 });
 
 submitBtn.addEventListener('click', (e) => {
-    e.preventDefault()
+    e.preventDefault();
     addBookToLibrary();
     console.log(myLibrary);
     titleInput.value = '';
